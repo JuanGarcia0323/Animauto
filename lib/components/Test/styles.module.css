@@ -1,0 +1,26 @@
+.container_one {
+  border: 1px solid gray;
+  padding: 50px;
+  width: 200px;
+  height: 200px;
+  background: rgb(91, 172, 91);
+}
+
+.container_transformed {
+  border: 1px solid gray;
+  padding: 50px;
+  width: 100px;
+  height: 100px;
+  background: rgb(172, 152, 91);
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.animated {
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
