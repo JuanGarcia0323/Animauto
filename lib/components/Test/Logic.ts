@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { IMemory } from "../../interfaces";
+import { IMemoryV2 } from "../../interfaces";
 import styles from "./styles.module.css";
 
-const memory: IMemory = {};
+const memory: IMemoryV2 = {};
 // const compareMemories = (
 //   memory: IMemory,
 //   memoryId: string,
@@ -19,7 +19,7 @@ const convertToAnimation = (element: HTMLDivElement, animateId: string) => {
     return;
   }
   const dateId = new Date().getTime().toString();
-  memory[animateId].date = dateId;
+  memory[animateId] = dateId;
   element.setAttribute("creation", dateId);
   element.classList.add(styles.animated);
 };
@@ -36,7 +36,7 @@ const preserveLast = (animateId: string) => {
   }
   repeated.forEach((e) => {
     const creation = e.getAttribute("creation");
-    const creationSaved = memory[animateId].date;
+    const creationSaved = memory[animateId];
     if (creation && creationSaved && creationSaved !== creation) {
       e.classList.add(styles.hidden);
       return;
